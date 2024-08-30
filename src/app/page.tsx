@@ -1,12 +1,13 @@
 import Navbar from "@/components/custom/Navbar";
+import Footer from "@/components/custom/Footer"
 
 export default function Home() {
   return (
     <>
       <main>
         <Navbar />
-
-        This is the home page
+        
+        <Footer />
       </main>
     </>
   )
