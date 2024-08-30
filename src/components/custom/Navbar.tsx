@@ -56,9 +56,9 @@ export default function Navbar() {
             >
                 <a href="/">
                     {/* Logo Section of the NavBar */}
-                    <div className="h-[50px] w-[50px] lg:w-[80px] lg:h-[80px] relative">
+                    <div className="h-[50px] w-[100px] lg:w-[200px] lg:h-[80px] relative">
                         <Image
-                            src="/logo.png"
+                            src="/weejet-logo.svg"
                             alt="Company Logo"
                             fill
                             objectFit="contain"
