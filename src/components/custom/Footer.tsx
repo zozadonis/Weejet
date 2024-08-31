@@ -5,7 +5,7 @@ import { FaGithub } from "react-icons/fa6";
 export default function Footer() {
     return (
         <>
-            <footer className="border-t border-gray-300 text-center flex justify-center items-center space-x-12 lg:space-x-[300px] text-[10px] lg:text-[16px] px-4">
+            <footer className="border-t border-gray-300 text-center flex justify-center items-center space-x-12 lg:space-x-[300px] text-[10px] lg:text-[16px] px-4 py-4">
                 <p className="font-semibold">
                     Built with 🖤
                 </p>
