@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { FaGithub } from "react-icons/fa6";
 import { RiNotionFill } from "react-icons/ri";
 import Image from "next/image";
-import TeamCarousel from "@/components/custom/TeamCarousel";
 
 export default function Home() {
   return (
