@@ -19,7 +19,7 @@ export default function Navbar() {
         const target = document.getElementById(targetID);
         if (target) {
             target.scrollIntoView({ behavior: "smooth" });
-            window.history.pushState(null, "", `#${targetID}`);
+            window.history.pushState(null, "", `/${targetID}`);
             if (isOpen) {
                 toggleMenu();
             }
@@ -59,7 +59,7 @@ export default function Navbar() {
                     <div className="h-[50px] w-[100px] lg:w-[200px] lg:h-[80px] relative">
                         <Image
                             src="/weejet-logo.svg"
-                            alt="Company Logo"
+                            alt="Weejet Logo"
                             fill
                             objectFit="contain"
                             className="object-contain"
@@ -86,7 +86,7 @@ export default function Navbar() {
                     <ul className="flex flex-col gap-10 text-center">
                         {links.map((item) => (
                             <li key={item.id}>
-                                <Link href={`#${item.url}`} onClick={() => handleClickLink(`${item.url}`)}>
+                                <Link href={`/${item.url}`} onClick={() => handleClickLink(`${item.url}`)}>
                                     {item.text}
                                 </Link>
                             </li>
@@ -99,7 +99,7 @@ export default function Navbar() {
                     <ul className="flex flex-row space-x-10 items-center">
                         {links.map((item) => (
                             <li key={item.id} className="hover:font-medium">
-                                <Link href={`#${item.url}`} onClick={() => handleClickLink(`${item.url}`)}>
+                                <Link href={`/${item.url}`} onClick={() => handleClickLink(`${item.url}`)}>
                                     {item.text}
                                 </Link>
                             </li>
@@ -114,22 +114,7 @@ export default function Navbar() {
 const links = [
     {
         id: 1,
-        url: "section1",
-        text: "Section 1",
-    },
-    {
-        id: 2,
-        url: "section2",
-        text: "Section 2",
-    },
-    {
-        id: 3,
-        url: "section3",
-        text: "Section 3",
-    },
-    {
-        id: 4,
-        url: "section4",
-        text: "Section 4",
+        url: "widgets",
+        text: "Widgets",
     },
 ];

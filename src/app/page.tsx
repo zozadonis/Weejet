@@ -10,7 +10,6 @@ export default function Home() {
   return (
     <>
       <main>
-        <Navbar />
           <section id="hero" className="px-4 lg:px-20 py-[100px] lg:py-[140px] text-center space-y-4 lg:space-y-6">
             <h1 className="text-[24px] lg:text-[40px] font-bold">Weejet</h1>
             <p className="text-[16px] lg:text-[20px] lg:w-[400px] mx-auto">
@@ -65,9 +64,8 @@ export default function Home() {
           </section>
           
           <section id="team" className="px-4 lg:px-10 lg:py-20 py-10 text-center">
-            <h1 className="text-[20px] lg:text-[36px] font-bold">Peeps behind Weejet</h1>
-            <p className="py-4 lg:py-6 lg:text-[20px]">Weejet wouldn&apos;t be possible without them!</p>
-            <TeamCarousel />
+            <h1 className="text-[20px] lg:text-[36px] font-bold">Contributors</h1>
+            <p className="py-4 lg:py-6 lg:text-[20px]">COMING SOON!</p>
           </section>
         <Footer />
       </main>
