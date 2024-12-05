@@ -1,0 +1,8 @@
+{
+    "id": "random-quote",
+    "title": "Random Quote Generator",
+    "description": "Displays a random motivational quote. Click the button to get a new one!",
+    "code": "<div id='quote-widget' class='p-4 border rounded-lg shadow-sm max-w-md mx-auto text-center'><p id='quote' class='text-lg italic text-gray-600'>Loading quote...</p><button onclick='generateQuote()' class='mt-4 px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition'>New Quote</button></div><script>const quotes = [\"The best way to predict the future is to create it.\",\"Believe you can and you're halfway there.\",\"You miss 100% of the shots you don’t take.\",\"Hard work beats talent when talent doesn’t work hard.\"];function generateQuote(){const randomIndex = Math.floor(Math.random() * quotes.length);document.getElementById(\"quote\").textContent = quotes[randomIndex];}generateQuote();</script>",
+    "author": "Johnson Chin"
+  }
+  

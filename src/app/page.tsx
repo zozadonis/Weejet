@@ -9,6 +9,7 @@ export default function Home() {
   return (
     <>
       <main>
+          <Navbar />
           <section id="hero" className="px-4 lg:px-20 py-[100px] lg:py-[140px] text-center space-y-4 lg:space-y-6">
             <h1 className="text-[24px] lg:text-[40px] font-bold">Weejet</h1>
             <p className="text-[16px] lg:text-[20px] lg:w-[400px] mx-auto">

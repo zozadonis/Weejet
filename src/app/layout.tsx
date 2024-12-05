@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/custom/Navbar";
 import { Geologica } from "next/font/google";
 import "./globals.css";
 
@@ -18,7 +17,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={geologica.className}>
-        <Navbar />
         {children}
         </body>
     </html>
