@@ -40,7 +40,7 @@ export default function WidgetsPage() {
           <button
             onClick={() =>
               navigator.clipboard.writeText(
-                `<iframe src="https://weejet.pages.dev/widgets/${widget.id}" width="400" height="200"></iframe>`
+                `<iframe src="https://weejet.vercel.app/widgets/${widget.id}" width="400" height="200"></iframe>`
               )
             }
             className="mt-2 px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition"
