@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import dynamic from "next/dynamic";
+import Navbar from "@/components/custom/Navbar";
 
 // Define interface for widget metadata
 interface WidgetMetadata {
@@ -26,14 +27,19 @@ export default async function WidgetsPage() {
   const widgetsMetadata = getWidgetsMetadata();
 
   return (
-    <div className="container mx-auto p-6">
-      <h1 className="text-2xl font-semibold">All Widgets</h1>
-      <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {widgetsMetadata.map((widget) => (
-          <WidgetCard key={widget.id} widget={widget} />
-        ))}
-      </div>
-    </div>
+    <>
+      <main>
+        <Navbar />
+        <div className="container mx-auto p-6">
+          <h1 className="text-2xl font-semibold">All Widgets</h1>
+          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {widgetsMetadata.map((widget) => (
+              <WidgetCard key={widget.id} widget={widget} />
+            ))}
+          </div>
+        </div>
+      </main>
+    </>
   );
 }
 
