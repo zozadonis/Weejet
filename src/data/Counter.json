@@ -1,0 +1,7 @@
+{
+  "id": "Counter",
+  "title": "Counter",
+  "description": "Standard react counter",
+  "author": "Johnson Chin",
+  "code": "/widgets/Counter/Counter.tsx"
+}
