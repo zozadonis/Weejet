@@ -1,30 +1,53 @@
 import { notFound } from "next/navigation";
 import fs from "fs";
 import path from "path";
+import dynamic from "next/dynamic";
 
-interface WidgetProps {
+// Define interface for widget metadata
+interface WidgetMetadata {
+  id: string;
+  title: string;
+  description: string;
+}
+
+interface WidgetPageProps {
   params: { id: string };
 }
 
-export default async function WidgetPage({ params }: WidgetProps) {
-  // Read widget metadata from the 'data' directory
-  const widgetPath = path.join(process.cwd(), "src", "data", `${params.id}.json`);
-  
-  // Check if the widget file exists
-  if (!fs.existsSync(widgetPath)) {
-    return notFound(); // Return 404 if widget not found
+// Function to get widget metadata by ID
+const getWidgetMetadataById = (id: string) => {
+  const widgetPath = path.join(process.cwd(), "src", "data", `${id}.json`);
+
+  if (fs.existsSync(widgetPath)) {
+    return JSON.parse(fs.readFileSync(widgetPath, "utf-8")) as WidgetMetadata;
   }
 
-  const widget = JSON.parse(fs.readFileSync(widgetPath, "utf-8"));
+  return null;
+};
+
+export default async function WidgetPage({ params }: WidgetPageProps) {
+  const widget = getWidgetMetadataById(params.id);
+
+  // If widget doesn't exist, return 404
+  if (!widget) {
+    return notFound();
+  }
+
+  // Dynamically import the widget component
+  const WidgetComponent = dynamic(() => import(`../../../components/widgets/${widget.id}/${widget.id}.tsx`), {
+    loading: () => <p>Loading...</p>,
+    ssr: false,
+  });
 
   return (
     <div className="container mx-auto p-6">
       <h1 className="text-2xl font-semibold">{widget.title}</h1>
       <p className="mt-2 text-gray-600">{widget.description}</p>
-      <div
-        className="mt-4"
-        dangerouslySetInnerHTML={{ __html: widget.code }}  // Embed widget's HTML & JS
-      />
+
+      <div className="mt-4">
+        {/* Render the widget component */}
+        <WidgetComponent />
+      </div>
     </div>
   );
 }
